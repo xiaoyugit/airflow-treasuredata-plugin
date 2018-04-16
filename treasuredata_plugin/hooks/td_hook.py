@@ -20,9 +20,9 @@ class TreasureHook(DbApiHook):
 
     def __init__(self, *args, **kwargs):
         super(TreasureHook, self).__init__(*args, **kwargs)
-        self.sql_type = kwargs['sql_type']
-        self.td_apikey = kwargs['td_apikey']
-        self.schema = kwargs['schema']
+        self.sql_type = kwargs.get('sql_type')
+        self.td_apikey = kwargs.get('td_apikey')
+        self.schema = kwargs.get('schema')
 
     def get_conn(self):
         """Returns a connection object"""
