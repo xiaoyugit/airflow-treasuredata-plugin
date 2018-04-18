@@ -107,7 +107,6 @@ class TreasureHook(DbApiHook):
             cur = conn.cursor()
             self.log.info("Running query: %s", hql)
             cur.execute(hql)
-            schema = cur.description
             with open(filepath, 'w') as f:
                 writer = csv.writer(f, delimiter=delimiter,
                                     lineterminator=lineterminator)
